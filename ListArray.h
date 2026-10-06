@@ -10,7 +10,7 @@ class ListArray {
 		T* arr;
 		int max;
 		int n;
-		static const int MINSIZE;
+		static const int MINSIZE=2;
 		void resize(int new_size){
 			T* newArray = new T[new_size];
 			for (int i=0;i<n;i++){
@@ -28,7 +28,7 @@ class ListArray {
 			arr=new T[MINSIZE];
 			max=MINSIZE;
 		}
-		~ListArray() override{
+		~ListArray(){
 			delete[] arr;
 		}
 		T operator[](int pos){
@@ -64,7 +64,7 @@ class ListArray {
 			insert(n,e);
 		}
 		void prepend(T e){
-			 inser(0,e);
+			 insert(0,e);
 		}
 
 		T remove(int pos){
