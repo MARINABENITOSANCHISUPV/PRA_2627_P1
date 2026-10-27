@@ -49,7 +49,7 @@ class ListArray {
 
 		//Metodos List.h
 		
-		void insert(int pos, T e){
+		virtual void insert(int pos, T e) override{
 			if (pos<0 || pos>n){
 				throw out_of_range("Posición no válida");	
 			}
@@ -60,14 +60,14 @@ class ListArray {
 			n++;
 		}
 
-		void append(T e){
+		virtual void append(T e) override{
 			insert(n,e);
 		}
-		void prepend(T e){
+		virtual void prepend override (T e){
 			 insert(0,e);
 		}
 
-		T remove(int pos){
+		virtual T remove(int pos) override{
 			if (pos <0 || pos>n){
 				throw out_of_range("Posición no válida");
 			}
@@ -80,14 +80,14 @@ class ListArray {
 			return aux;
 		}
 
-		T get(int pos){
+		virtual T get(int pos) override{
 			if (pos <0 || pos>n){
                                 throw out_of_range("Posición no válida");
 			}
 			return arr[pos];
 		}
 
-		int search(T e){
+		virtual int search override(T e){
 			for(int i=0;i<n;i++){
 				if(arr[i]==e){
 					return i;
@@ -96,7 +96,7 @@ class ListArray {
 			return -1;
 		}
 
-		bool empty(){
+		virtual bool empty override(){
 			if(n==0){
 				return true;
 		
@@ -104,7 +104,7 @@ class ListArray {
 			return false;
 		}
 
-		int size(){
+		virtual int size() override{
 			return n;
 		}
 
