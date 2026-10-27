@@ -50,7 +50,7 @@ class ListLinked : public List<T> {
 
 	//Métodos de List
 	
-	virtual void insert(int pos, T e) override{
+	void insert(int pos, T e) override{
 		if(pos<0 || pos>n){
 			throw out_of_range("Posición no válida");
 		}
@@ -70,15 +70,15 @@ class ListLinked : public List<T> {
 		}			
 	}
 
-	virtual void append override(T e){
+	void append override(T e){
 		insert(n,e);
 	}
 
-	virtual void prepend(T e) override{
+	void prepend(T e) override{
 		insert(0,e);
 	}
 
-	virtual T remove(int pos) override{
+	T remove(int pos) override{
 		if(pos<0 || pos>=n){
                         throw out_of_range("Posición no válida");
                 }
@@ -102,7 +102,7 @@ class ListLinked : public List<T> {
 		}
 	}
 
-	virtual T get(int pos) override{
+	T get(int pos) override{
 		if(pos<0 || pos>=n){
                         throw out_of_range("Posición no válida");
                 }
@@ -110,7 +110,7 @@ class ListLinked : public List<T> {
 
 	}
 	
-	virtual int search(T e)override{
+	int search(T e)override{
 		Node<T>* aux = first;
 		int cont=0;
 		while(aux!=nullptr && aux -> data !=e){
@@ -124,7 +124,7 @@ class ListLinked : public List<T> {
 		}
 	}
 
-	virtual bool empty() override{
+	bool empty() override{
 		if(first==nullptr){
 			return true;
 		} else {
@@ -133,7 +133,7 @@ class ListLinked : public List<T> {
 	
 	}
 
-	virtual int size() override{
+	int size() override{
 		return n;
 	}
 
